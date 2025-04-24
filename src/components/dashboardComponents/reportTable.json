@@ -1,0 +1,42 @@
+[
+    {
+      "contractCode": "623-561-7355",
+      "orderDate": "2022-10-20T00:00:00.000Z",
+      "salePerson": "Oritz",
+      "amount": 200,
+      "tax": 20,
+      "total": 220
+    },
+    {
+      "contractCode": "214-549-9069",
+      "orderDate": "2022-10-20T00:00:00.000Z",
+      "salePerson": "Johnson",
+      "amount": 1200,
+      "tax": 120,
+      "total": 1320
+    },
+    {
+      "contractCode": "909-877-2594",
+      "orderDate": "2022-10-20T00:00:00.000Z",
+      "salePerson": "Young",
+      "amount": 2300,
+      "tax": 230,
+      "total": 2530
+    },
+    {
+      "contractCode": "936-535-0978",
+      "orderDate": "2022-10-20T00:00:00.000Z",
+      "salePerson": "Allen",
+      "amount": 200,
+      "tax": 20,
+      "total": 220
+    },
+    {
+      "contractCode": "210-541-5415",
+      "orderDate": "2022-10-20T00:00:00.000Z",
+      "salePerson": "Nelson",
+      "amount": 1800,
+      "tax": 180,
+      "total": 1980
+    }
+  ]
