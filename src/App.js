@@ -50,13 +50,13 @@ const RightSection = styled.div`
 `;
 export default function App() {
   const theme = useSelector((state) => state.theme);
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const isLoading = useSelector((state) => state.loader.isLoading);
   const user = useSelector((state) => state.user.user); // افترض أن حالة المستخدم مخزنة في Redux
 
   const isAdmin = user? user.role == "admin" : false
 
-  
+
   const renderProtectedRoute = (Component, props = {}, show=true) => {
     const { collapsed, setCollapsed } = props;
     if(show)
