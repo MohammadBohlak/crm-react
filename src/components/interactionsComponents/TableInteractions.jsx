@@ -38,6 +38,7 @@ function TableInteractions(props) {
         filters={{key: "type", states: ["email", "meeting", "call"]}}
         noEdit= {true}
         noAdd= {true}
+        noActions={true}
         columns={[
           {
             key: "customerName",

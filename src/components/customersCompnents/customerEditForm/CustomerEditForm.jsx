@@ -9,13 +9,13 @@ import { customerFields, validationSchema } from "./fieldsLogic";
 const CustomerEditForm = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-
   const [customer, setCustomer] = useState(undefined);
+  console.log(customer)
   useEffect(() => {
     const fetchCustomer = async () => {
       try {
         const response = await api.get(ENDPOINTS.USERS.GET_BY_ID(id));
-        setCustomer(response.data);
+        setCustomer(response.data.data);
       } catch (error) {
         console.error("Failed to fetch customer:", error);
         // navigate("/error"); // توجيه إلى صفحة الخطأ في حالة فشل الطلب
@@ -31,7 +31,7 @@ const CustomerEditForm = () => {
     api
       .put(ENDPOINTS.USERS.EDIT(id), { ...values })
       .then((res) => {
-        console.log(res);
+        navigate("/customers")
       })
       .catch((err) => {
         console.log("err is ", err);
@@ -43,7 +43,7 @@ const CustomerEditForm = () => {
       {customer && (
         <GenericEditForm
           fields={customerFields}
-          initialValues={customer || {}}
+          initialValues={customer}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
           onCancel={() => {

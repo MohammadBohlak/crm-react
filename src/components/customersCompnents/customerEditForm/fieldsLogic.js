@@ -24,11 +24,25 @@ export const customerFields = [
       ],
       col: 6,
     },
+    {
+      name: "phone",
+      type: "phone", 
+      label: "Phone",
+      col: 6
+    },
+    {
+      name: "company",
+      type: "text",
+      label: "Company", 
+      col: 6
+    }
   ];
 
   // مخطط التحقق
  export const validationSchema = {
     status: Yup.string().required("Status is required"),
       role: Yup.string().required("Role is required"),
+      phone: Yup.string().trim(),
+      company: Yup.string().trim()
     
   };

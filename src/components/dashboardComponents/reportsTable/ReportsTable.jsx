@@ -32,7 +32,7 @@ const ReportTable = ({ data }) => {
             header: "Total",
           },
         ]}
-        identifier="_id"
+        identifier="contractCode"
         onDelete={(ids) => console.log("Delete items:", ids)}
         onBulkDelete={(ids) => console.log("Bulk delete:", ids)}
         onEdit={(item) => console.log("Edit item:", item)}

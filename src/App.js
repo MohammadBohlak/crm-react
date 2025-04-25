@@ -108,7 +108,7 @@ export default function App() {
               <>
                 <Route
                   path="/"
-                  element={renderProtectedRoute(Products, {
+                  element={renderProtectedRoute(isAdmin? Dashboard : Customers, {
                     collapsed,
                     setCollapsed,
                   })}

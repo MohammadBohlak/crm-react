@@ -86,6 +86,7 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
                   $collapsed={collapsed}
                   className={activeItem === item.id ? "active" : ""}
                   to={`/${item.id}`}
+                  title={collapsed ? item.label : ""}
                   onClick={() => setActiveItem(item.id)}
                 >
                   {item.icon}
