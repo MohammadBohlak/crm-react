@@ -46,7 +46,8 @@ const RegisterPage = () => {
          dispatch(login({
                   id: userData._id,    // من الخادم
                   email: userData.email,
-                  role: userData.role
+                  role: userData.role,
+                  theme: "light"
                 })); 
       })
       .catch(err => {
