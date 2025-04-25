@@ -4,11 +4,6 @@ import {
   FiHome,
   FiUsers,
   FiShoppingCart,
-  FiSettings,
-  FiPieChart,
-  FiMail,
-  FiCalendar,
-  FiFileText,
   FiChevronLeft,
   FiChevronRight,
 } from "react-icons/fi";
@@ -21,7 +16,6 @@ import {
   ToggleButton,
 } from "./sidebar.styles";
 import { PiUsersThreeBold } from "react-icons/pi";
-import ThemeButton from "../../themeButton/ThemeButton";
 import { LiaProductHunt } from "react-icons/lia";
 import { SiInteractiondesignfoundation } from "react-icons/si";
 import { MdDeleteOutline } from "react-icons/md";

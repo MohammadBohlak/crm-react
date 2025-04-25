@@ -7,9 +7,6 @@ import {
 import { useSelector } from "react-redux";
 import styled, { ThemeProvider } from "styled-components";
 import { useState } from "react";
-import { api } from "./utils/api/api";
-import { ENDPOINTS } from "./utils/api/endPoints";
-import { lightTheme, darkTheme } from "./styles/themes";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import Sidebar from "./components/ui/sidebar/Sidebar.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -34,9 +31,6 @@ import RemovedSalesTable from "./components/salesCompnents/RemovedSalesTable.jsx
 import LoginPage from "./pages/loginPage/LoginPage.jsx";
 import RegisterPage from "./pages/RegisterPage/RegisterPage.jsx";
 import UnauthorizedPage from "./pages/UnauthorizedPage.jsx";
-import { Row } from "react-bootstrap";
-import ThemeButton from "./components/themeButton/ThemeButton.jsx";
-import { IoIosLogOut } from "react-icons/io";
 import TopSection from "./components/ui/topSections/TopSection.jsx";
 const Content = styled.div`
   display: flex;
@@ -54,6 +48,8 @@ export default function App() {
   const isLoading = useSelector((state) => state.loader.isLoading);
   const user = useSelector((state) => state.user.user); // افترض أن حالة المستخدم مخزنة في Redux
 
+  const  {currentTheme}  = useSelector((state) => state.theme);
+  console.log(currentTheme)
   const isAdmin = user? user.role == "admin" : false
 
 
@@ -75,7 +71,7 @@ export default function App() {
   return (
     <>
       <Router>
-        <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+        <ThemeProvider theme={currentTheme}>
           {isLoading && <Loader />}
           <GlobalStyles />
           <Routes>

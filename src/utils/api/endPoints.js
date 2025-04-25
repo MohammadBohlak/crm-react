@@ -1,5 +1,3 @@
-import { api } from "./api";
-
 const createCrudEndpoints = (resource) => ({
   CREATE: `/${resource}`,
   GET: `/${resource}`,

@@ -43,9 +43,7 @@ const LineChart = () => {
   }, []);
 
   return (
-    // <div>
       <canvas ref={chartRef}></canvas>
-    // </div>
   );
 };
 

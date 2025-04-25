@@ -28,6 +28,7 @@ const GenericTable = ({
   noEdit,
   handleRestore,
   Restore,
+  noActions
 }) => {
   const user = useSelector((state) => state.user.user);
   const isAdmin = user.role == "admin";
@@ -147,7 +148,7 @@ const GenericTable = ({
       <Table striped bordered hover responsive>
         <thead>
           <tr>
-            {isAdmin && (
+            {isAdmin && !noActions &&(
               <th>
                 <Form.Check
                   type="checkbox"
@@ -164,7 +165,7 @@ const GenericTable = ({
               <th key={index}>{column.header}</th>
             ))}
            {
-            isAdmin &&  <th>Actions</th>
+            isAdmin && !noActions &&  <th>Actions</th>
            }
           </tr>
         </thead>
@@ -177,7 +178,7 @@ const GenericTable = ({
                 selectedRows.includes(row[identifier]) ? "selected" : ""
               }
             >
-              {isAdmin && (
+              {isAdmin && !noActions && (
                 <td>
                   <Form.Check
                     type="checkbox"
@@ -194,7 +195,7 @@ const GenericTable = ({
               ))}
 
              {
-              isAdmin && (
+              isAdmin && !noActions && (
                 <td style={{ display: "flex", justifyContent: "center" }}>
                 {!noEdit && (
                   <Link to={`${links.edit}/${row._id}`}>

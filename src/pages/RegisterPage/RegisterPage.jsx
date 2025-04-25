@@ -1,6 +1,5 @@
-// src/pages/Register.jsx
-import { Formik, Field, useFormikContext } from "formik";
-import { useDispatch, useSelector } from "react-redux";
+import { Formik } from "formik";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import renderField from "../../components/common/genericForm/genericAddForm/renderField";
 import {
@@ -15,7 +14,7 @@ import {
   WelcomeSection,
 } from "./registerPage.styles";
 import { initialValues, registerFields, registerSchema } from "./registerLogic";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ENDPOINTS } from "../../utils/api/endPoints";
 import { api } from "../../utils/api/api";
 import CustomToast from "../../components/common/customToast/CustomToast";
@@ -28,7 +27,6 @@ const RegisterPage = () => {
   const [toastTitle, setToastTitle] = useState("");
 
     const dispatch = useDispatch();
-      const user = useSelector((state) => state.user)
     
   
   const handleSubmit = (values) => {

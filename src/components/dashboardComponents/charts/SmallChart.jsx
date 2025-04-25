@@ -69,7 +69,6 @@ const SmallChart = ({chartColor}) => {
       <Bar 
         data={data} 
         options={options}
-        // يمكنك ضبط الأبعاد هنا إذا لزم الأمر
         width={null}
         height={null}
       />

@@ -1,15 +1,9 @@
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const TableContainer = styled.div`
   margin: 20px 0;
   border-radius: 8px;
-  /* transition: margin-top 0.3s ease-in-out; */
-  /* transition: all 0.3s; */
- /* 
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-  overflow: hidden; */
     input:focus,
     select:focus{
         box-shadow: none;
@@ -28,6 +22,8 @@ export const TableContainer = styled.div`
     padding: 8px;
     border: 1px solid  ${({ theme }) => theme.colors.border} ;
     white-space: nowrap;
+    font-size: 1.2rem;
+
   }
   
   tr:nth-child(1) th {
@@ -37,9 +33,7 @@ export const TableContainer = styled.div`
     background-color: ${({ theme }) => theme.colors.background};
   }
   tr:nth-child(odd) td {
-    /* background-color: ${({ theme }) => theme.colors.textMuted}; */
     background-color:  ${({ theme }) => theme.colors.primary };
-
     color: white;
   }
   svg {
@@ -66,7 +60,6 @@ export const TableContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    font-size: 1rem;
     th,
     td {
       padding: 5px;
@@ -82,9 +75,7 @@ export const TableTitle = styled.h2`
 `
 
 export const ControlsContainer = styled.div`
-  /* padding: 15px 0 ; */
   margin-bottom: 15px;
-  /* background:  ${({theme}) => theme.colors.textMuted} ; */
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
@@ -98,9 +89,7 @@ export const ActionButton = styled(Button)`
   display: flex ;
   justify-content: space-between;
   align-items: center;
-  /* background-color: ; */
   svg{
-    /* font-size: 1rem; */
     font-size: 1.5rem !important;
   }
 `;

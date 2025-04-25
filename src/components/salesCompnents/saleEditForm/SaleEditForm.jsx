@@ -3,7 +3,7 @@ import GenericEditForm from "../../common/genericForm/genericEditForm/GenericEdi
 import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../../../utils/api/api";
 import { ENDPOINTS } from "../../../utils/api/endPoints";
-import { saleFields, saleValidationSchema, validationSchema } from "./fieldsLogic";
+import { saleFields, saleValidationSchema } from "./fieldsLogic";
 
 const SaleEditForm = () => {
   const { id } = useParams();

@@ -58,7 +58,6 @@ export const Value = styled.h2`
 
 export const Change = styled.span`
   color: ${(props) => (props.$trend === "up" ? "#10b981" : "#F44336")};
-  /* color: ${(props) => (props.$trend === "up" ? "#4CAF50" : "#F44336")}; */
   font-size: 1.5rem;
   font-weight: bold;
 `;

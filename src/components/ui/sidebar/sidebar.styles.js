@@ -1,4 +1,4 @@
-import { Button, Nav } from "react-bootstrap";
+import { Button} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -73,9 +73,6 @@ export const MenuItem = styled(Link)`
     background: rgba(255, 255, 255, 0.2);
   }
   
-  /* .nav-link:focus, .nav-link:hover{
-    color: white !important
-  } */
   .icon {
     margin-right: ${props => props.$collapsed ? '0' : '0.75rem'};
     font-size: 1.5rem;

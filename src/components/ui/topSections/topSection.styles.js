@@ -1,4 +1,4 @@
-import { Row } from "react-bootstrap";
+import { Button, Row } from "react-bootstrap";
 import styled from "styled-components";
 
 export const StyledTopSection = styled(Row)`
@@ -17,15 +17,15 @@ export const StyledTopSection = styled(Row)`
     transparent
   );
 `;
-export const LogoutButton = styled.button`
-  width: 100px;
+export const LogoutButton = styled(Button)`
+  width: 80px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: ${({ theme }) => theme.colors.error};
   color: white;
   padding: 3px 10px 3px 10px;
-  height: 40px;
+  height: 35px;
   border: 1px solid transparent;
   transition: all 0.3s;
   font-size: 1.3rem;
@@ -35,6 +35,12 @@ export const LogoutButton = styled.button`
     color: ${({ theme }) => theme.colors.error};
     background-color: white;
     border: 1px solid ${({ theme }) => theme.colors.error};
+  }
+
+  @media (max-width: 768px){
+    width: fit-content;
+    height: 30px;
+    /* padding: 3px; */
   }
 
   svg {
