@@ -41,7 +41,8 @@ const LoginPage = () => {
         dispatch(login({
           id: userData._id,    // من الخادم
           email: userData.email,
-          role: userData.role
+          role: userData.role,
+          theme: userData.theme
         }));
       })
       .catch((err) => {

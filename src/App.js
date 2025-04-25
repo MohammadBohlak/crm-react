@@ -4,9 +4,9 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled, { ThemeProvider } from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import Sidebar from "./components/ui/sidebar/Sidebar.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -32,6 +32,7 @@ import LoginPage from "./pages/loginPage/LoginPage.jsx";
 import RegisterPage from "./pages/RegisterPage/RegisterPage.jsx";
 import UnauthorizedPage from "./pages/UnauthorizedPage.jsx";
 import TopSection from "./components/ui/topSections/TopSection.jsx";
+import { setCustomTheme, setDarkTheme, setLightTheme } from "./store/slices/themeSlice.js";
 const Content = styled.div`
   display: flex;
   max-width: 100%;
@@ -49,10 +50,29 @@ export default function App() {
   const user = useSelector((state) => state.user.user); // افترض أن حالة المستخدم مخزنة في Redux
 
   const  {currentTheme}  = useSelector((state) => state.theme);
-  console.log(currentTheme)
   const isAdmin = user? user.role == "admin" : false
+  
+    const dispatch = useDispatch();
+  useEffect(()=>{
+   if(user){
+    switch(user.theme){
+      case "light":{
+        dispatch(setLightTheme());
+        break;
+      }
+      case "dark":{
+        dispatch(setDarkTheme());
+        break;
+      }
+      default:{
+        dispatch(setCustomTheme(user.theme))
+        break;
+      }
+   }
+      
+    }
 
-
+  }, [user])
   const renderProtectedRoute = (Component, props = {}, show=true) => {
     const { collapsed, setCollapsed } = props;
     if(show)
